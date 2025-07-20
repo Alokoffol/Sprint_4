@@ -1,5 +1,5 @@
 package pages;
-
+//иморт
 import org.openqa.selenium.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
