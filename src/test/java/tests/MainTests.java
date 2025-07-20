@@ -1,5 +1,5 @@
 package tests;
-
+// импорт
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.*;
 import org.junit.runner.RunWith;
