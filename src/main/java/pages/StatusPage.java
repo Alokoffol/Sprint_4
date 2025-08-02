@@ -37,12 +37,7 @@ public class StatusPage {
     }
 
     public boolean isNotFoundMessageDisplayed() {
-        try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(notFoundBlock));
-            WebElement image = driver.findElement(notFoundImage);
-            return image.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("div.Track_NotFound__6oaoY"))).isDisplayed();
     }
 }

@@ -82,13 +82,14 @@ public class MainPage {
         }
     }
 
+    // MainPage.java
     public void clickAccordionItem(int index) {
-        WebElement item = wait.until(ExpectedConditions.elementToBeClickable(getAccordionQuestion(index)));
-        item.click();
+        WebElement question = driver.findElement(By.id("accordion__heading-" + index));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", question);
     }
 
     public String getAccordionAnswerText(int index) {
-        WebElement answer = wait.until(ExpectedConditions.visibilityOfElementLocated(getAccordionAnswer(index)));
-        return answer.getText();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.id("accordion__panel-" + index))).getText();
     }
 }

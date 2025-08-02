@@ -164,6 +164,12 @@ public class OrderPage {
         }
     }
 
+    public void clickNextButton() {
+        WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//button[text()='Далее']")));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].click();", nextButton);
+    }
+
     private void takeScreenshot(String name) {
         try {
             ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
